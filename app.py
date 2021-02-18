@@ -16,10 +16,10 @@ app.secret_key = "sudeep"  # needs to be complicated
 api = Api(app)  # helps to make http operations easier
 
 
-# this function runs before any http request is made - used for creation of rss. like tables
-@app.before_first_request
-def create_table():
-    db.create_all()     # creates all necessary tables automatically
+# # this function runs before any http request is made - used for creation of rss. like tables
+# @app.before_first_request
+# def create_table():
+#     db.create_all()     # creates all necessary tables automatically
 
 
 jwt = JWT(app, authenticate, identity)  # creates a new endpoint /auth which returns the JWT token
